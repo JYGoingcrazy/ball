@@ -10,6 +10,7 @@
 
 #include "bsp_servo.h"
 #include "bsp_keys.h"
+#include "bsp_VL53L0X.h"
 
 
 /*******************************************
@@ -44,6 +45,7 @@ void Keys_on_keydown(uint8_t index ) {
     printf("update angle:%.1f\n",Servo_get_angle());
 
 }
+extern VL53L0X_Dev_t vl53l0x_dev;//设备I2C数据参数
 int main(void)
 {
     nvic_priority_group_set(NVIC_PRIGROUP_PRE2_SUB2);
@@ -58,10 +60,41 @@ delay_1ms(100);
 
     printf("init\n");
     Servo_set_angle(90);
+	
+		
+//	Servo_set_angle(90);
+	uint8_t mode = 0;//0：默认;1:高精度;2:长距离;3:高速
+  VL53L0X_Error Status=VL53L0X_ERROR_NONE;//工作状态
+
+  nvic_priority_group_set(NVIC_PRIGROUP_PRE2_SUB2);   // 优先级分组
+  printf("start\r\n");
+
+  while(vl53l0x_init(&vl53l0x_dev))//vl53l0x初始化
+  {
+    printf("VL53L0X Error!!!\n\r");
+    delay_1ms(100);
+  }
+  printf("VL53L0X OK\r\n");
+
+  while(vl53l0x_set_mode(&vl53l0x_dev,mode))//配置测量模式
+  {
+    printf("Mode Set Error\r\n");
+    delay_1ms(100);
+  }
 
     while(1) {
         Keys_scan();
         delay_1ms(10);
+			
+				//执行单次测距并获取测距测量数据
+		Status = VL53L0X_PerformSingleRangingMeasurement(&vl53l0x_dev, &vl53l0x_data);
+		if(Status == VL53L0X_ERROR_NONE){
+			// 测量结果没有错误
+			printf("d: %4imm\r\n",vl53l0x_data.RangeMilliMeter);//打印测量距离
+		}else {
+			printf("VL53L0X error: %d\n", Status);
+		}
+		delay_1ms(100);
 
     }
 }

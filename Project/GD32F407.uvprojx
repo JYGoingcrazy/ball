@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER,GD32F407</Define>
               <Undefine></Undefine>
-              <IncludePath>..\User;..\Hardware;..\Library;..\Firmware\CMSIS;..\Firmware\CMSIS\GD\GD32F4xx\Include;..\Firmware\GD32F4xx_standard_peripheral\Include</IncludePath>
+              <IncludePath>..\User;..\Hardware;..\Library;..\Firmware\CMSIS;..\Firmware\CMSIS\GD\GD32F4xx\Include;..\Firmware\GD32F4xx_standard_peripheral\Include;..\Hardware\VL53L0X\core\inc;..\Hardware\VL53L0X;..\Hardware\VL53L0X\platform\inc</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -398,6 +398,11 @@
               <FileName>main.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\User\main.c</FilePath>
+            </File>
+            <File>
+              <FileName>sys.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\User\sys.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -528,6 +533,66 @@
         </Group>
         <Group>
           <GroupName>Doc</GroupName>
+        </Group>
+        <Group>
+          <GroupName>Hardware/VL53L0X</GroupName>
+          <Files>
+            <File>
+              <FileName>bsp_VL53L0X.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Hardware\VL53L0X\bsp_VL53L0X.c</FilePath>
+            </File>
+            <File>
+              <FileName>vl53l0x_cali.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Hardware\VL53L0X\vl53l0x_cali.c</FilePath>
+            </File>
+            <File>
+              <FileName>vl53l0x_gen.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Hardware\VL53L0X\vl53l0x_gen.c</FilePath>
+            </File>
+            <File>
+              <FileName>vl53l0x_it.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Hardware\VL53L0X\vl53l0x_it.c</FilePath>
+            </File>
+            <File>
+              <FileName>vl53l0x_i2c.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Hardware\VL53L0X\platform\src\vl53l0x_i2c.c</FilePath>
+            </File>
+            <File>
+              <FileName>vl53l0x_platform.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Hardware\VL53L0X\platform\src\vl53l0x_platform.c</FilePath>
+            </File>
+            <File>
+              <FileName>vl53l0x_api.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Hardware\VL53L0X\core\src\vl53l0x_api.c</FilePath>
+            </File>
+            <File>
+              <FileName>vl53l0x_api_calibration.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Hardware\VL53L0X\core\src\vl53l0x_api_calibration.c</FilePath>
+            </File>
+            <File>
+              <FileName>vl53l0x_api_core.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Hardware\VL53L0X\core\src\vl53l0x_api_core.c</FilePath>
+            </File>
+            <File>
+              <FileName>vl53l0x_api_ranging.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Hardware\VL53L0X\core\src\vl53l0x_api_ranging.c</FilePath>
+            </File>
+            <File>
+              <FileName>vl53l0x_api_strings.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Hardware\VL53L0X\core\src\vl53l0x_api_strings.c</FilePath>
+            </File>
+          </Files>
         </Group>
       </Groups>
     </Target>

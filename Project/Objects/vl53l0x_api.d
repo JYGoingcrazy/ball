@@ -1,5 +1,10 @@
-./objects/main.o: ..\User\main.c \
-  ..\Firmware\CMSIS\GD\GD32F4xx\Include\gd32f4xx.h \
+./objects/vl53l0x_api.o: ..\Hardware\VL53L0X\core\src\vl53l0x_api.c \
+  ..\Hardware\VL53L0X\core\inc\vl53l0x_api.h \
+  ..\Hardware\VL53L0X\core\inc\vl53l0x_api_strings.h \
+  ..\Hardware\VL53L0X\core\inc\vl53l0x_def.h \
+  ..\Hardware\VL53L0X\core\inc\vl53l0x_device.h \
+  ..\Hardware\VL53L0X\platform\inc\vl53l0x_types.h \
+  ..\Firmware\CMSIS\GD\GD32F4xx\Include\GD32f4xx.h \
   ..\Firmware\CMSIS\core_cm4.h ..\Firmware\CMSIS\core_cmInstr.h \
   ..\Firmware\CMSIS\core_cmFunc.h ..\Firmware\CMSIS\core_cm4_simd.h \
   ..\Firmware\CMSIS\GD\GD32F4xx\Include\system_gd32f4xx.h \
@@ -31,17 +36,13 @@
   ..\Firmware\GD32F4xx_standard_peripheral\Include\gd32f4xx_misc.h \
   ..\Firmware\GD32F4xx_standard_peripheral\Include\gd32f4xx_enet.h \
   ..\Firmware\GD32F4xx_standard_peripheral\Include\gd32f4xx_exmc.h \
-  ..\User\systick.h ..\User\main.h ..\Library\USART0.h \
-  ..\Library\USART_config.h ..\Library\TIMER.h ..\Library\TIMER_config.h \
-  ..\Hardware\bsp_servo.h ..\Hardware\bsp_keys.h \
-  ..\Hardware\VL53L0X\bsp_VL53L0X.h \
-  ..\Hardware\VL53L0X\core\inc\vl53l0x_api.h \
-  ..\Hardware\VL53L0X\core\inc\vl53l0x_api_strings.h \
-  ..\Hardware\VL53L0X\core\inc\vl53l0x_def.h \
-  ..\Hardware\VL53L0X\core\inc\vl53l0x_device.h \
-  ..\Hardware\VL53L0X\platform\inc\vl53l0x_types.h \
   ..\Hardware\VL53L0X\platform\inc\vl53l0x_platform.h \
   ..\Hardware\VL53L0X\platform\inc\vl53l0x_i2c.h \
   ..\Hardware\VL53L0X\platform\inc\vl53l0x_platform_log.h \
-  ..\Hardware\VL53L0X\vl53l0x_gen.h ..\Hardware\VL53L0X\vl53l0x_cali.h \
-  ..\Hardware\VL53L0X\vl53l0x_it.h ..\User\sys.h
+  ..\Hardware\VL53L0X\bsp_vl53l0x.h ..\Hardware\VL53L0X\vl53l0x_gen.h \
+  ..\User\systick.h ..\Hardware\VL53L0X\vl53l0x_cali.h \
+  ..\Hardware\VL53L0X\vl53l0x_it.h ..\User\sys.h \
+  ..\Hardware\VL53L0X\core\inc\vl53l0x_tuning.h \
+  ..\Hardware\VL53L0X\core\inc\vl53l0x_interrupt_threshold_settings.h \
+  ..\Hardware\VL53L0X\core\inc\vl53l0x_api_core.h \
+  ..\Hardware\VL53L0X\core\inc\vl53l0x_api_calibration.h
