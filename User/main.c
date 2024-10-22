@@ -6,6 +6,7 @@
 
 #include "USART0.h"
 #include "TIMER.h"
+#include "I2C.h"
 
 
 #include "bsp_servo.h"

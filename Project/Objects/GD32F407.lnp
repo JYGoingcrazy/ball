@@ -15,6 +15,8 @@
 ".\objects\usart0.o"
 ".\objects\exti.o"
 ".\objects\timer.o"
+".\objects\i2c.o"
+".\objects\i2c0.o"
 ".\objects\bsp_servo.o"
 ".\objects\bsp_keys.o"
 ".\objects\bsp_vl53l0x.o"
